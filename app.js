@@ -3,15 +3,18 @@ const app = express();
 import tasks from "./routes/tasks.js";
 import mongooseDB from "./db/connect.js";
 import { config } from "dotenv";
+import notFound from "./middleware/not-found.js";
+import errorHandlerMiddleware from "./middleware/error-handler.js";
 const DB_URI = config();
+
 //json middleware
 app.use(express.json());
 //routes
-app.get("/hello", (req, res) => {
-  res.send("task manager app");
-});
 
 app.use("/api/v1/tasks", tasks);
+app.use(notFound);
+app.use(errorHandlerMiddleware);
+//
 const port = 3000;
 //connect DB
 const start = async () => {
