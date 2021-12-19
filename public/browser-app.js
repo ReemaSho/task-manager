@@ -53,3 +53,25 @@ const showTasks = async() => {
     loadingDOM.style.visibility = "hidden";
 };
 showTasks();
+
+// delete task /api/tasks/:id
+
+tasksDOM.addEventListener("click", async(e) => {
+    const ele = e.target;
+    console.log(ele);
+    if (ele.parentElement.classList.contains("delete-btn")) {
+        loadingDOM.style.visibility = "visible";
+        const id = ele.parentElement.dataset.id;
+        console.log(ele.parentElement.dataset.id);
+        try {
+            await fetch(`/api/v1/tasks/${id}`, {
+                method: "DELETE",
+            });
+
+            showTasks();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    loadingDOM.style.visibility = "hidden";
+});
