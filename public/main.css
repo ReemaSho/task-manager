@@ -12,10 +12,11 @@
     --lavender-grey: rgb(122, 122, 139);
     --black-russian: rgb(29, 29, 38);
     --dark-pink: rgb(187, 72, 176, 1);
+    --light-pink: rgb(217, 135, 182);
+    --orange: #ff6617;
     --sundown: rgb(247, 196, 188, 1);
     --blue: rgb(112, 196, 191);
     --black: rgb(18, 18, 23, 1);
-    --red-dark: #842029;
     /* typography */
     --font: "Rubik", sans-serif;
     --letterSpacing: 1px;
@@ -31,7 +32,6 @@
 }
 
 html {
-    font-size: 112.5%;
     height: 100%;
     width: 100%;
 }
@@ -112,7 +112,7 @@ h1 {
     border-radius: 50%;
     height: 4rem;
     width: 4rem;
-    left: 55rem;
+    left: 60rem;
     top: 15rem;
 }
 
@@ -130,7 +130,7 @@ h1 {
     letter-spacing: var(--letterSpacing);
     border-radius: var(--borderRadius);
     border: 1px solid var(--dark-pink);
-    margin: 0.5rem;
+    margin: 3rem;
 }
 
 .btn:hover {
@@ -149,7 +149,8 @@ h1 {
     display: none;
 }
 
-form {
+form,
+.tasks-container {
     width: 50%;
     background: var(--black-russian);
     border: 10px solid var(--silver);
@@ -185,9 +186,63 @@ input:focus-visible {
 }
 
 .form-alert {
-    color: var(--red-dark);
+    color: var(--orange);
     letter-spacing: var(--letterSpacing);
     text-transform: capitalize;
     text-align: center;
     margin-top: 2rem;
+}
+
+
+/* tasks */
+
+.tasks {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.single-task {
+    padding: 0.5rem 1rem;
+    background: var(--black);
+    color: var(--white);
+    border-radius: var(--borderRadius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+div.single-task>h5>span>i {
+    visibility: hidden;
+    color: var(--light-pink);
+    margin: 0.5rem;
+}
+
+div.task-completed>h5 {
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: line-through;
+}
+
+div.task-completed>h5>span>i {
+    visibility: visible;
+}
+
+.edit-link {
+    color: var(--blue);
+}
+
+.delete-btn {
+    color: var(--orange);
+    background-color: var(--silver);
+    border: unset;
+}
+
+.delete-btn,
+.edit-link {
+    background: transparent;
+    font-size: 0.75rem;
+    border: transparent;
+    cursor: pointer;
 }
