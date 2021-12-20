@@ -24,44 +24,43 @@
 
             <nav>
                 <div id="tsks-icon">
-                    <span><i
-                class="fas fa-check-square"
-                style="color: var(--light-pink); margin: 5px"
-              ></i></span
-            >tsks.
-          </div>
-        </nav>
-        <main>
-          <h1 class="z-index-top">
-            Tsks, just tasks <span class="pink-gradient-bg"></span>
-                    </h1>
-                    <p class="z-index-top">
-                        Keep track of the daily tasks in life and get that satisfaction upon complete
-                    </p>
-                    <button class="new-task-btn btn z-index-top pink-gradient-bg">
+                    <span><i class="fas fa-check-square icon-pink"></i></span>tsks.
+                </div>
+            </nav>
+            <main>
+                <h1 class="z-index-top">
+                    Tsks, just tasks <span class="pink-gradient-bg"></span>
+                </h1>
+                <p class="z-index-top">
+                    Keep track of the daily tasks in life and get that satisfaction upon complete
+                </p>
+                <button class="new-task-btn btn z-index-top pink-gradient-bg">
             New Task
           </button>
-                    <form class="task-form z-index-top display-none">
-                        <div class="form-control">
-                            <label>add new task</label>
-                            <input type="text" name="name" class="task-input" placeholder="e.g. wash dishes" />
-                            <button type="submit" class="btn submit-btn pink-gradient-bg">
+                <form class="task-form z-index-top display-none">
+                    <span class="close-icon"><i class="fas fa-times icon-pink"></i
+            ></span>
+                    <div class="form-control">
+                        <label>add new task</label>
+                        <input type="text" name="name" class="task-input" placeholder="e.g. wash dishes" />
+                        <button type="submit" class="btn submit-btn pink-gradient-bg">
                 submit
               </button>
-                        </div>
-                        <div class="form-alert"></div>
-                    </form>
-                    <section class="tasks-container z-index-top">
-                        <p class="loading-text">Loading...</p>
-                        <div class="tasks">
-                            <h5 class="empty-list">No tasks in your list</h5>
-                        </div>
-                    </section>
-                    </main>
-                </div>
+                    </div>
+                    <div class="form-alert display-none"></div>
+                </form>
+                <section class="tasks-container z-index-top">
+                    <div class="semi-circle"></div>
+                    <p class="loading-text z-index-top">Loading...</p>
+                    <div class="tasks z-index-top">
+                        <h5 class="empty-list z-index-top">No tasks in your list</h5>
+                    </div>
+                </section>
+            </main>
         </div>
+    </div>
 
-        <script src="./browser-app.js"></script>
+    <script src="./browser-app.js"></script>
 </body>
 
 </html>

@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- favicon -->
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <!-- favicon -->
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <!-- main  -->
     <link rel="stylesheet" href="./main.css" />
     <title>Tsks./edit task</title>
@@ -18,18 +18,18 @@
 <body>
     <div id="gray-padding">
         <div id="div-wrapper">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <div class="black-circle"></div>
+
+            <div class="black-circle"></div>
+            <div class="pink-circle"></div>
             <nav>
-                <div>
-                    <span><i class="fas fa-check-square"></i></span>tsks.
+                <div id="tsks-icon">
+                    <span><i class="fas fa-check-square icon-pink"></i></span>tsks.
                 </div>
             </nav>
             <main>
-                <form class="single-task-form">
-                    <h4>Edit Task</h4>
+                <form class="single-task-form z-index-top">
+                    <h1>Edit Task</h1>
                     <div class="form-control">
                         <label>Task ID</label>
                         <p class="task-edit-id"></p>
@@ -42,15 +42,17 @@
                         <label for="completed">completed</label>
                         <input type="checkbox" name="completed" class="task-edit-completed" />
                     </div>
-                    <button type="submit" class="block btn task-edit-btn">edit</button>
+                    <button type="submit" class="btn task-edit-btn pink-gradient-bg">
+              edit
+            </button>
                     <div class="form-alert"></div>
                 </form>
-                <a href="index.html" class="btn back-link">back to tasks</a>
-            </main>
-        </div>
+                <a href="index.html" class="btn pink-gradient-bg back-link">back to tasks</a
+          >
+        </main>
+      </div>
     </div>
     <!-- js -->
     <script src="./edit-task.js"></script>
-</body>
-
+  </body>
 </html>

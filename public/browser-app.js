@@ -4,6 +4,7 @@ const formDOM = document.querySelector(".task-form");
 const taskInputDOM = document.querySelector(".task-input");
 const formAlertDOM = document.querySelector(".form-alert");
 const newTaskBtnDOM = document.querySelector(".new-task-btn");
+const closeIconDOM = document.querySelector(".close-icon");
 
 const createTaskDOMEle = (completed, name, taskID) => {
     return `<div class="single-task ${completed && "task-completed"}">
@@ -74,7 +75,11 @@ const showForm = () => {
     newTaskBtnDOM.classList.add("display-none");
     formDOM.classList.remove("display-none");
 };
-
+const closeForm = () => {
+    newTaskBtnDOM.classList.remove("display-none");
+    formDOM.classList.add("display-none");
+};
+closeIconDOM.addEventListener("click", closeForm);
 newTaskBtnDOM.addEventListener("click", showForm);
 formDOM.addEventListener("submit", async(e) => {
     e.preventDefault();
@@ -84,11 +89,8 @@ formDOM.addEventListener("submit", async(e) => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: taskName }),
     };
-    console.log(options);
     try {
         const response = await fetch("/api/v1/tasks", options);
-        console.log(response);
-
         showTasks();
         if (response.status === 201) {
             taskInputDOM.value = "";
@@ -97,19 +99,13 @@ formDOM.addEventListener("submit", async(e) => {
             formAlertDOM.classList.add("text-success");
         } else {
             formAlertDOM.style.display = "block";
-
             formAlertDOM.textContent = `error, please try again`;
         }
     } catch (error) {
         console.log(error);
     }
     setTimeout(() => {
-        if (taskInputDOM.value.length === 0) {
-            formDOM.classList.add("display-none");
-        }
-
         formAlertDOM.classList.remove("text-success");
         formAlertDOM.style.display = "none";
-        newTaskBtnDOM.classList.remove("display-none");
     }, 5000);
 });
