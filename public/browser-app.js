@@ -10,8 +10,6 @@ const createTaskDOMEle = (completed, name, taskID) => {
      <h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
      <div class="task-links">
     
-    
-    
      <!-- edit link -->
      <a href="task.html?id=${taskID}" class="edit-link">
      <i class="fas fa-edit"></i></a>
@@ -106,9 +104,12 @@ formDOM.addEventListener("submit", async(e) => {
         console.log(error);
     }
     setTimeout(() => {
-        formAlertDOM.style.display = "none";
+        if (taskInputDOM.value.length === 0) {
+            formDOM.classList.add("display-none");
+        }
+
         formAlertDOM.classList.remove("text-success");
+        formAlertDOM.style.display = "none";
         newTaskBtnDOM.classList.remove("display-none");
-        formDOM.classList.add("display-none");
-    }, 4000);
+    }, 5000);
 });
