@@ -10,6 +10,7 @@ const DB_URI = config();
 //json middleware
 
 app.use(express.json());
+app.use(express.static("./public"));
 
 //routes
 
@@ -19,12 +20,12 @@ app.use(errorHandlerMiddleware);
 //
 const Port = process.env.Port || 3000;
 //connect DB
-const start = async () => {
-  try {
-    await mongooseDB(DB_URI.parsed.MONGO_URI);
-    app.listen(Port, console.log(`Server is listening on port ${Port}...`));
-  } catch (error) {
-    console.log(error);
-  }
+const start = async() => {
+    try {
+        await mongooseDB(DB_URI.parsed.MONGO_URI);
+        app.listen(Port, console.log(`Server is listening on port ${Port}...`));
+    } catch (error) {
+        console.log(error);
+    }
 };
 start();
