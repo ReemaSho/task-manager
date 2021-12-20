@@ -1,11 +1,9 @@
 const taskIdDOM = document.querySelector(".task-edit-id");
-console.log(taskIdDOM);
 const taskNameDOM = document.querySelector(".task-edit-name");
 const taskCompletedDOM = document.querySelector(".task-edit-completed");
 const editFormDOM = document.querySelector(".single-task-form");
 const editBtnDOM = document.querySelector(".task-edit-btn");
 const formAlertDOM = document.querySelector(".form-alert");
-console.log(formAlertDOM);
 const params = window.location.search;
 const id = new URLSearchParams(params).get("id");
 let taskName;
