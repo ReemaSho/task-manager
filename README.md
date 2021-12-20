@@ -8,10 +8,10 @@ Style inspired by [dribbble](https://dribbble.com/shots/15111239-Landing-page-WI
 
 ## features
 
-- [x] Show all tasks from database .
-- [x] Add new task to database .
-- [x] Update a task .
-- [x] Delete a task .
+- [x] Show all tasks from database.
+- [x] Add new task to database.
+- [x] Update a task.
+- [x] Delete a task.
 
 ## Project setup
 
