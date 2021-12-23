@@ -15,6 +15,7 @@ Style inspired by [dribbble](https://dribbble.com/shots/15111239-Landing-page-WI
 
 ## Project setup
 
-In order to run the project, setup **.env** and set _MONGO_URI_variable equal to_DB_ connection string.
+- run **npm install**
+- In order to run the project, setup **.env** and set _MONGO_URI_variable equal to_DB_ connection string.
 
-In order to avoid port collisions, In the source code port value is 3000.
+- In order to avoid port collisions, In the source code port value is 3000.
